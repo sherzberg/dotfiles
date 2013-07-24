@@ -13,6 +13,7 @@ Bundle 'klen/python-mode'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'ameade/qtpy-vim'
 Bundle 'rodjek/vim-puppet'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on     " required!
 
