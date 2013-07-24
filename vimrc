@@ -33,7 +33,7 @@ autocmd filetype python set ft=python.django
 
 " Colors
 set t_Co=256
-" color 256-jungle
+color 256-jungle
 
 " Python Mode Settings
 " Enable python folding
