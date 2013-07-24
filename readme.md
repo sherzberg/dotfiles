@@ -15,9 +15,11 @@ Installation
 $ git clone git://github.com/whelmingbytes/dotfiles.git
 ```
 
-I now use Vundle to install vim plugins so use this target
+I now use Vundle to install vim plugins so use this target. This command will fail when trying to load colors but just hit ENTER.
 
 ```bash
+$ git submodule init
+$ git submodule update
 $ make plugin-update
 ```
 
