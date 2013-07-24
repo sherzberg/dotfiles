@@ -16,6 +16,7 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on     " required!
 
