@@ -1,0 +1,13 @@
+#!/bin/bash
+for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
+do
+	rm -rf $HOME/.$i;
+	ln -s $HOME/dotfiles/$i $HOME/.$i;
+done;
+
+mkdir -p ~/.config/awesome
+rm -rf ~/.config/awesome
+ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
+
+rm -f ~/.config/redshift.conf
+ln -s $HOME/dotfiles/redshift.conf ~/.config/redshift.conf

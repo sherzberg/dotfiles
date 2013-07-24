@@ -1,0 +1,65 @@
+syntax: glob
+
+# Python
+*.pyc
+
+# Vagrant
+.vagrant
+
+# Debian
+*.deb
+
+# OSX
+.DS_Store
+
+# NodeJS
+node_modules
+
+# Misc
+*.log
+*.log.1
+*.log.2
+*.log.3
+*.log.4
+*.log.5
+*.orig
+*.bak
+*.class
+*~
+*.old
+
+# IDEA
+*.iml
+*.iws
+*.ipr
+*.idea
+
+# Java
+out/
+target/
+classes/
+dist/
+test-out/
+
+# Eclipse
+.project
+.settings
+.classpath
+.manager
+
+# SCM
+.svn
+.hg*
+
+# DB
+*.sqlite3
+*.db
+
+# Vim
+*.swp
+
+# Rope
+.ropeproject
+
+# Gradle
+.gradle
