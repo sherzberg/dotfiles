@@ -4,11 +4,20 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" Bundles
+Bundle 'klen/python-mode'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'ameade/qtpy-vim'
+Bundle 'rodjek/vim-puppet'
+
+filetype plugin indent on     " required!
+
 " Setup Leader
 let mapleader = ","
-
-filetype plugin on
-filetype indent on
 
 syntax on
 set ruler
@@ -62,11 +71,3 @@ au FileType python nnoremap <F9> :QTPY session<CR>
 au FileType python nnoremap <silent><Leader>c <Esc>:QTPY class verbose<CR>
 au FileType python nnoremap <silent><Leader>m <Esc>:QTPY method verbose<CR>
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" Bundles
-Bundle 'klen/python-mode'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'ameade/qtpy-vim'
