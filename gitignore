@@ -1,5 +1,8 @@
 syntax: glob
 
+# virtualenv
+.env
+
 # Python
 *.pyc
 
