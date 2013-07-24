@@ -13,11 +13,12 @@ class roles::workstation {
   exec {'/bin/chown sherzberg:sherzberg -R /opt/android':
   }
 
-  include roles::basedev
-  include roles::vcs
-  include roles::python
-  include roles::jvm
-  include roles::virtualization
-  include roles::uitools
-
+  #include roles::basedev
+  #include roles::vcs
+  #include roles::python
+  #include roles::jvm
+  #include roles::virtualization
+  #include roles::uitools
+  #include roles::database
+  include roles::node
 }

@@ -1,4 +1,5 @@
 forge "http://forge.puppetlabs.com"
+mod "willdurand/nodejs", "0.0.3"
 mod "smarchive/gradle"
 mod "sherzberg/groovy"
 mod "maestrodev/android"#,

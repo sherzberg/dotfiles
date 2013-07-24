@@ -4,7 +4,7 @@ class roles::virtualization {
   #class {'vagrant': }
 
   package {'libvirt-deps':
-    name => ['cpu-checker', 'qemu-kvm', 'libvirt-bin', 'virtinst']
+    name => ['cpu-checker', 'qemu-kvm', 'libvirt-bin', 'virtinst'],
     ensure => present,
   }
 

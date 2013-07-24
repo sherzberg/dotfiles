@@ -5,7 +5,7 @@ class roles::uitools {
   }
 
   package {'tools':
-    name => ['pcmanfm', 'virt-manager', 'qemu-system'],
+    name => ['pcmanfm', 'virt-manager', 'qemu-system', 'meld'],
     ensure => present,
   }
 
