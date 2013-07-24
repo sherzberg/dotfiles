@@ -15,23 +15,21 @@ Installation
 $ git clone git://github.com/whelmingbytes/dotfiles.git
 ```
 
-Where possible, Vim plugins are installed as git submodules. Check these out by
-running the commands:
+I now use Vundle to install vim plugins so use this target
 
 ```bash
-$ make vim-init
+$ make plugin-update
 ```
-
-Install
-=======
 
 Be sure to backup anything like ~/.bashrc or ~/.vimrc as this will delete them.
 
 ```bash
-$ make install
+$ ./install
 ```
 
 Update Vim Plugins
 ==================
 
-$ make vim-update
+```bash
+$ make plugin-update
+```
