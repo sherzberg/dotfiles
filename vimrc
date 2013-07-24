@@ -14,6 +14,8 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'ameade/qtpy-vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on     " required!
 
