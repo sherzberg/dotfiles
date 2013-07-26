@@ -49,6 +49,17 @@ let g:pymode_folding = 0
 "Disable rope guess
 let g:pymode_rope_guess_project = 0
 
+trlP Mappings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = 'node_modules$\|.DS_Store|.git|.bak|.swp|.pyc'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_max_height = 18
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
 
 " Key Mappings
 """"""""""""""
