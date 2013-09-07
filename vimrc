@@ -50,7 +50,7 @@ let g:pymode_folding = 0
 let g:pymode_rope_guess_project = 0
 
 " Ignore errors with:
-let g:pymode_lint_ignore = "E501"
+let g:pymode_lint_ignore = "E501,E128"
 
 " CtrlP Mappings
 let g:ctrlp_map = '<c-p>'
