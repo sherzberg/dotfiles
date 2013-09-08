@@ -57,3 +57,5 @@ if test -d /etc/profile.d/; then
 fi
 
 proml
+
+source /usr/local/bin/activate.sh
