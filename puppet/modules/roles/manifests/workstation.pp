@@ -17,7 +17,7 @@ class roles::workstation {
   #include roles::vcs
   #include roles::python
   #include roles::jvm
-  #include roles::virtualization
+  include roles::virtualization
   #include roles::uitools
   #include roles::database
   include roles::node
