@@ -28,6 +28,9 @@ bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
+# run display-chooser
+bindsym $mod+Shift+P exec ~/dotfiles/i3/display-chooser.sh
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
