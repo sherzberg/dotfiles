@@ -143,9 +143,12 @@ bindsym XF86AudioLowerVolume exec "amixer -c 0 -- sset Master '2.00dB-'"
 #bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
 
 # Other Keys
-bindsym $mod+p exec "pcmanfm"
+bindsym $mod+p exec "nautilus"
 
 #assign [class="Google Chrome"] "2: web"
+
+# don't show the extra desktop window when launching Nautilus
+exec gsettings set org.gnome.desktop.background show-desktop-icons false
 
 #exec google-chrome
 exec feh --bg-fill ~/.background.png
