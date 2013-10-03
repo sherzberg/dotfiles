@@ -1,7 +1,7 @@
 class roles::basedev {
 
   package {'dev-deps':
-    name => ['curl', 'unzip', 'cowsay', 'ncdu', 'unar', 'htop'],
+    name => ['curl', 'unrar', 'unzip', 'cowsay', 'ncdu', 'unar', 'htop', 'ranger'],
     ensure => present,
   }
 
