@@ -18,6 +18,9 @@ syntax: glob
 # NodeJS
 node_modules
 
+# Android
+gen/
+
 # Misc
 *.log
 *.log.1
