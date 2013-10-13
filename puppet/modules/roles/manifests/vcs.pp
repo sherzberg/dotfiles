@@ -5,10 +5,4 @@ class roles::vcs {
     ensure => present,
   }
 
-  package {'legit':
-    ensure => present,
-    provider => 'pip',
-    require => Class["roles::python"],
-  }
-
 }
