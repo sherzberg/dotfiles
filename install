@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
+for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession zshrc
 do
 	rm -rf $HOME/.$i;
 	ln -s $HOME/dotfiles/$i $HOME/.$i;
