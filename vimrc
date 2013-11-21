@@ -23,6 +23,7 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "ekalinin/Dockerfile.vim"
+Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 "
 
 filetype plugin indent on     " required!
@@ -96,3 +97,8 @@ au FileType python nnoremap <F9> :QTPY session<CR>
 au FileType python nnoremap <silent><Leader>c <Esc>:QTPY class verbose<CR>
 au FileType python nnoremap <silent><Leader>m <Esc>:QTPY method verbose<CR>
 
+"vim-python-test-runner
+nnoremap<Leader>da :DjangoTestApp<CR>
+nnoremap<Leader>df :DjangoTestFile<CR>
+nnoremap<Leader>dc :DjangoTestClass<CR>
+nnoremap<Leader>dm :DjangoTestMethod<CR>
