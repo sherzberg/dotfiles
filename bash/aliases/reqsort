@@ -1,0 +1,1 @@
+alias reqsort='cat requirements.txt | sort -f -m | tee requirements.txt'
