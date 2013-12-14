@@ -24,6 +24,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "ekalinin/Dockerfile.vim"
 Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
+Bundle "plasticboy/vim-markdown"
 "
 
 filetype plugin indent on     " required!
@@ -102,3 +103,6 @@ nnoremap<Leader>da :DjangoTestApp<CR>
 nnoremap<Leader>df :DjangoTestFile<CR>
 nnoremap<Leader>dc :DjangoTestClass<CR>
 nnoremap<Leader>dm :DjangoTestMethod<CR>
+
+"vim-markdown settings
+let g:vim_markdown_folding_disabled=1
