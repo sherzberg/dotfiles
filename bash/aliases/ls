@@ -1,5 +1,4 @@
 
-alias ls='ls -lh --color=auto'
-alias l=ls
-alias la='ls -lah --color=auto'
+alias la="ls -laG"
+alias ls="ls -lG"
 
