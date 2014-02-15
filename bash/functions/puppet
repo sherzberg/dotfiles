@@ -1,0 +1,18 @@
+pp_check () {
+  MODULES="~/puppet-vagrant/puppet-modules/sai-modules:~/puppet-vagrant/puppet-modules/modules"
+  # Usage: CWD check `pp_check` ; dir check `pp_check profile/` ; single file check: `pp_check init.pp`
+  if [ -z "$1" ] ; then CHECK='./'; else CHECK=$1; fi;
+  # Directory provided
+  if [ -d "$CHECK" ] ; then
+    echo "Checking directory $CHECK"
+    for file in $(find $CHECK -iname '*.pp') ; do
+      echo -n "$file - ";
+      puppet parser validate --render-as s --modulepath="$MODULES" "$file" && echo 'PASS' || break;
+    done
+  # Single File
+  elif [ -f "$CHECK" ] ; then
+    echo -n "$CHECK - ";
+    puppet parser validate --render-as s --modulepath="$MODULES" "$CHECK" && echo 'PASS';
+  # Default, every *.pp under current dir
+  fi;
+}
