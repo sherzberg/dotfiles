@@ -1,4 +1,16 @@
 #!/bin/bash
+
+# Need to make this portable
+brew install git
+
+cd ~
+
+git clone --recursive git@github.com:sherzberg/dotfiles.git
+cd dotfiles
+
+
+
+# Setup sym links
 for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession zshrc
 do
 	rm -rf $HOME/.$i;
@@ -16,3 +28,7 @@ ln -s $HOME/dotfiles/redshift.conf ~/.config/redshift.conf
 
 mkdir -p ~/.pip
 ln -s ~/dotfiles/pip.conf ~/.pip/pip.conf
+
+
+vim +BundleInstall +qall
+echo "Installation complete! Run $ source ~/.bashrc"
