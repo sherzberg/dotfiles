@@ -10,7 +10,7 @@ cd dotfiles
 
 
 # Setup sym links
-for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession zshrc
+for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
 do
 	rm -rf $HOME/.$i;
 	ln -s $HOME/dotfiles/$i $HOME/.$i;
