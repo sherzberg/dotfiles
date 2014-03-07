@@ -9,7 +9,6 @@ git clone --recursive git@github.com:sherzberg/dotfiles.git
 cd dotfiles
 
 
-
 # Setup sym links
 for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession zshrc
 do
@@ -29,6 +28,11 @@ ln -s $HOME/dotfiles/redshift.conf ~/.config/redshift.conf
 mkdir -p ~/.pip
 ln -s ~/dotfiles/pip.conf ~/.pip/pip.conf
 
+if [ "$(uname)" = "Darwin" ]; then
+	ln -s $HOME/dotfiles/tmux/mac_tmux ~/.tmux
+else
+	ln -s $HOME/dotfiles/tmux/linux_tmux ~/.tmux
+fi
 
 vim +BundleInstall +qall
 echo "Installation complete! Run $ source ~/.bashrc"
