@@ -25,7 +25,8 @@ Bundle "garbas/vim-snipmate"
 Bundle "ekalinin/Dockerfile.vim"
 Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 Bundle "plasticboy/vim-markdown"
-"
+Bundle "jnwhiteh/vim-golang"
+
 
 filetype plugin indent on     " required!
 
