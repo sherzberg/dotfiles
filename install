@@ -1,7 +1,13 @@
 #!/bin/bash
 
 # Need to make this portable
-brew install git
+if [[ `uname` == "Darwin" ]]; then
+	brew install git
+else
+	apt-get install git
+fi
+
+exit
 
 cd ~
 
