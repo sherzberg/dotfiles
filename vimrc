@@ -104,6 +104,10 @@ nnoremap<Leader>da :DjangoTestApp<CR>
 nnoremap<Leader>df :DjangoTestFile<CR>
 nnoremap<Leader>dc :DjangoTestClass<CR>
 nnoremap<Leader>dm :DjangoTestMethod<CR>
+nnoremap<Leader>nf :NosetestFile<CR>
+nnoremap<Leader>nc :NosetestClass<CR>
+nnoremap<Leader>nm :NosetestMethod<CR>
+nnoremap<Leader>rr :RerunLastTests<CR>
 
 "vim-markdown settings
 let g:vim_markdown_folding_disabled=1
