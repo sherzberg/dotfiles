@@ -60,6 +60,10 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# Bind keyboard shortcuts
+bind '"\C-p": "fs\n"'
+
+
 proml
 
 source /usr/local/bin/activate.sh
