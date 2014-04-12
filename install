@@ -17,6 +17,8 @@ cd dotfiles
 # enables ctrl-p like search in a terminal
 sudo pip install -e git+https://github.com/jeetsukumaran/fuzzysnake.git#egg=fuzzysnake
 
+sudo pip install ipython
+
 # Setup sym links
 for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
 do
