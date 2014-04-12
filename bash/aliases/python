@@ -1,2 +1,4 @@
 
 alias python=ipython
+
+alias notebook="ipython notebook --ip='*'"
