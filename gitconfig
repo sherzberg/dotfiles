@@ -21,6 +21,7 @@
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-files
 	ps = push origin master
+	f = fetch -p
 
 [core]
 	autocrlf = input
