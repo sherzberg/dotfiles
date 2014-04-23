@@ -7,8 +7,6 @@ else
 	apt-get install git
 fi
 
-exit
-
 cd ~
 
 git clone --recursive git@github.com:sherzberg/dotfiles.git
