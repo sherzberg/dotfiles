@@ -26,6 +26,7 @@ Bundle "ekalinin/Dockerfile.vim"
 Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 Bundle "plasticboy/vim-markdown"
 Bundle "jnwhiteh/vim-golang"
+Bundle "hylang/vim-hy"
 
 
 filetype plugin indent on     " required!
