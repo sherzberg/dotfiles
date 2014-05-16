@@ -22,6 +22,7 @@
 	ls = ls-files
 	ps = push origin master
 	f = fetch -p
+	p = add --patch
 
 [core]
 	autocrlf = input
