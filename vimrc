@@ -27,6 +27,7 @@ Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 Bundle "plasticboy/vim-markdown"
 Bundle "jnwhiteh/vim-golang"
 Bundle "hylang/vim-hy"
+Bundle "editorconfig/editorconfig-vim"
 
 
 filetype plugin indent on     " required!
