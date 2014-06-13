@@ -28,6 +28,7 @@ Bundle "plasticboy/vim-markdown"
 Bundle "jnwhiteh/vim-golang"
 Bundle "hylang/vim-hy"
 Bundle "editorconfig/editorconfig-vim"
+Bundle 'vim-ruby/vim-ruby'
 
 
 filetype plugin indent on     " required!
