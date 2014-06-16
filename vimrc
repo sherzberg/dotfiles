@@ -62,7 +62,13 @@ let g:pymode_lint_ignore = "E501,E128"
 " CtrlP Mappings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = 'build$\|node_modules$\|.DS_Store|.git|.bak|.swp|.pyc'
+" let g:ctrlp_custom_ignore = 'build$\|node_modules$\|.DS_Store|.git|.bak|.swp|.pyc|_site$\'
+let g:ctrlp_custom_ignore = {
+  \ 'hiddendir':  '\v[\/]\.(git|hg|svn|DS_Store)$',
+  \ 'dir':  '\v[\/](_site)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
