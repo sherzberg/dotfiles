@@ -4,7 +4,7 @@
 if [[ `uname` == "Darwin" ]]; then
 	brew install git
 else
-	apt-get install git
+	apt-get install -y git
 fi
 
 cd ~
