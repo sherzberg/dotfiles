@@ -23,6 +23,7 @@
 	ps = push origin master
 	f = fetch -p
 	p = add --patch
+	sp = stash --patch
 
 [core]
 	autocrlf = input
