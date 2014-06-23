@@ -61,7 +61,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # Bind keyboard shortcuts
-bind '"\C-p": "fs\n"'
+bind '"\C-p": "fz\n"'
 
 
 proml
