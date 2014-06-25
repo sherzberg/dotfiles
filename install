@@ -10,14 +10,15 @@ fi
 cd ~
 mkdir -p ~/bin
 
-git clone --recursive git@github.com:sherzberg/dotfiles.git
-cd dotfiles
 
 # enables ctrl-p like search in a terminal
 # see bashrc for binding
 curl -ssl3 https://raw.githubusercontent.com/jeetsukumaran/fuzzysnake/master/bin/fz > ~/bin/fz && chmod 0755 ~/bin/fz
 
 sudo pip install ipython pyzmq tornado
+
+git clone --recursive git@github.com:sherzberg/dotfiles.git
+cd dotfiles
 
 # Setup sym links
 for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
