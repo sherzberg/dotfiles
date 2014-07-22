@@ -19,6 +19,7 @@
 	lg = log -p
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	hist = log --graph --oneline
 	ls = ls-files
 	ps = push origin master
 	f = fetch -p
