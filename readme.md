@@ -14,7 +14,7 @@ Installation
 Be sure to backup anything like ~/.bashrc or ~/.vimrc as this will delete them.
 
 ```bash
-$ curl -s http://git.io/O3VIhg | bash
+$ wget -O - http://git.io/O3VIhg | sudo sh
 ```
 
 I now use Vundle to install vim plugins so use this target. This command will fail when trying to load colors but just hit ENTER.

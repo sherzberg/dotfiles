@@ -1,10 +1,19 @@
 #!/bin/bash
+shopt -s extglob
+set -o errtrace
+set -o errexit
 
 # Need to make this portable
 if [ "$(uname)" = "Darwin" ]; then
 	brew install git
 else
 	apt-get install -y git
+fi
+
+if [ ! -x `which vim` ]; then
+	if [ ! "$(uname)" = "Darwin" ]; then
+		apt-get install -y vim-nox
+	fi
 fi
 
 cd ~
