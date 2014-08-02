@@ -21,7 +21,7 @@ git clone --recursive git@github.com:sherzberg/dotfiles.git
 cd dotfiles
 
 # Setup sym links
-for i in bashrc gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
+for i in bashrc bash_profile gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
 do
 	rm -rf $HOME/.$i;
 	ln -s $HOME/dotfiles/$i $HOME/.$i;
