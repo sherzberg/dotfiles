@@ -15,6 +15,7 @@ mkdir -p ~/bin
 # see bashrc for binding
 curl -ssl3 https://raw.githubusercontent.com/jeetsukumaran/fuzzysnake/master/bin/fz > ~/bin/fz && chmod 0755 ~/bin/fz
 
+echo "Need to install ipython, pyzmq and tornado"
 sudo pip install ipython pyzmq tornado
 
 git clone --recursive git@github.com:sherzberg/dotfiles.git
@@ -43,6 +44,14 @@ if [ "$(uname)" = "Darwin" ]; then
 	ln -s $HOME/dotfiles/tmux/mac_tmux ~/.tmux
 else
 	ln -s $HOME/dotfiles/tmux/linux_tmux ~/.tmux
+fi
+
+echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
+if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
+    echo -n "What is your git user name => "; read name
+    git config --global user.name "$name"
+    echo -n "What is your git email => "; read email
+    git config --global user.email "$email"
 fi
 
 vim +BundleInstall +qall
