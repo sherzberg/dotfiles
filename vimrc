@@ -55,7 +55,7 @@ let g:pymode_folding = 0
 "Disable rope guess
 let g:pymode_rope_guess_project = 0
 " Ignore errors with:
-let g:pymode_lint_ignore = "E501,E128"
+let g:pymode_lint_ignore = "E501,E128,W391"
 " Ignore 'dot'
 let g:pymode_rope_complete_on_dot = 0
 
