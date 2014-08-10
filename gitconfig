@@ -26,6 +26,7 @@
 	f = fetch -p
 	p = add --patch
 	sp = stash --patch
+	rb = rebase -i HEAD~20
 
 [core]
 	autocrlf = input
