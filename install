@@ -3,7 +3,10 @@ shopt -s extglob
 set -o errtrace
 set -o errexit
 
-# Need to make this portable
+echo "Need to install git (brew install git | apt-get install git)"
+echo "=> press enter"
+read
+
 if [ "$(uname)" = "Darwin" ]; then
 	brew install git
 else
