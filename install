@@ -27,8 +27,8 @@ mkdir -p ~/bin
 # see bashrc for binding
 curl -ssl3 https://raw.githubusercontent.com/jeetsukumaran/fuzzysnake/master/bin/fz > ~/bin/fz && chmod 0755 ~/bin/fz
 
-echo "Need to install ipython, pyzmq, tornado and pythonpy"
-sudo pip install ipython pyzmq tornado pythonpy
+echo "Need to install a few python deps"
+sudo pip install virtualenv virtualenvwrapper autoenv pyzmq tornado pythonpy
 
 git clone --recursive git@github.com:sherzberg/dotfiles.git
 cd dotfiles
