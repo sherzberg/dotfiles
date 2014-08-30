@@ -29,7 +29,8 @@ curl -ssl3 https://raw.githubusercontent.com/jeetsukumaran/fuzzysnake/master/bin
 echo "Need to install a few python deps"
 sudo pip install virtualenv virtualenvwrapper autoenv pyzmq tornado pythonpy
 
-git clone --recursive git@github.com:sherzberg/dotfiles.git
+cd ~
+git clone --recursive https://github.com/sherzberg/dotfiles.git
 cd dotfiles
 
 # Setup sym links
