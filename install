@@ -1,7 +1,6 @@
 #!/bin/bash
 shopt -s extglob
-set -o errtrace
-set -o errexit
+set -euo pipefail
 
 echo "Need to install git (brew install git | apt-get install git)"
 echo "=> press enter"
