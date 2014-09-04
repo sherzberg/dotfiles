@@ -29,6 +29,7 @@ Bundle "jnwhiteh/vim-golang"
 Bundle "hylang/vim-hy"
 Bundle "editorconfig/editorconfig-vim"
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-commentary'
 
 
 filetype plugin indent on     " required!
