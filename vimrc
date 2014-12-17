@@ -87,6 +87,10 @@ nmap <leader>q :q<cr>
 nmap <leader>wq :wq<cr>
 nmap <leader>qw :wq<cr>
 
+" I always type this on accedent...
+nmap <leader>Wq :wq<cr>
+nmap <leader>wq :wq<cr>
+
 " Split Window Navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
