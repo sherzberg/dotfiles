@@ -53,12 +53,16 @@ color 256-jungle
 " Python Mode Settings
 " Enable python folding
 let g:pymode_folding = 0
-"Disable rope guess
+" Disable rope guess
 let g:pymode_rope_guess_project = 0
 " Ignore errors with:
 let g:pymode_lint_ignore = "E501,E128,W391"
 " Ignore 'dot'
 let g:pymode_rope_complete_on_dot = 0
+" Disable rope lookup project
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_regenerate_on_write = 0
+let g:pymode_rope_autoimport = 0
 
 " CtrlP Mappings
 let g:ctrlp_map = '<c-p>'
