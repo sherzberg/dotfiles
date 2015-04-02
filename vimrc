@@ -43,11 +43,6 @@ filetype plugin indent on     " required!
 " Setup Leader
 let mapleader = ","
 
-syntax on
-set ruler
-set number
-set showmode
-
 " File Type settings
 autocmd filetype python set expandtab
 autocmd filetype python set ft=python.django
@@ -135,3 +130,39 @@ nnoremap<Leader>rr :RerunLastTests<CR>
 
 "vim-markdown settings
 let g:vim_markdown_folding_disabled=1
+
+
+
+
+
+
+
+
+
+" From here: https://github.com/JarrodCTaylor/dotfiles
+
+if !exists("g:exclude")
+    let g:exclude = [""]
+endif
+
+let b:fileList = split(globpath('~/.vim/vanilla-configs', '*.vim'), '\n')
+" let b:fileList += split(globpath('~/.vim/plugin-configs', '*.vim'), '\n')
+" let b:fileList += split(globpath('~/.vim/functions', '*.vim'), '\n')
+" let b:fileList += split(globpath('~/dotfiles/custom-configs/**', '*.vim'), '\n')
+
+" Function to process lists for sourceing and adding bundles {1
+function! ProcessList(listToProcess, functionToCall)
+    for fpath in a:listToProcess
+        if index(g:exclude, split(fpath, "/")[-1]) >= 0
+            continue
+        else
+            call {a:functionToCall}(fpath)
+        endif
+    endfor
+endfunction
+
+function! SourceFile(fpath)
+    exe 'source' a:fpath
+endfunction
+
+call ProcessList(b:fileList, "SourceFile")
