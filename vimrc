@@ -31,6 +31,12 @@ Bundle "editorconfig/editorconfig-vim"
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-commentary'
 
+" Go
+Bundle 'fatih/vim-go'
+
+" PHP
+Bundle 'arnaud-lb/vim-php-namespace'
+
 
 filetype plugin indent on     " required!
 
