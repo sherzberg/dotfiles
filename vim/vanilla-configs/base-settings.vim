@@ -16,9 +16,9 @@ set incsearch                          " Do incremental searching
 set ignorecase                         " Ignore case when searching....
 set smartcase                          " ...unless uppercase letter are used
 set hlsearch                           " Highlight the last used search pattern
-set list                               " Toggle manually with set list / set nolist or set list!
-set listchars=""                       " Empty the listchars
-set listchars=tab:>.                   " A tab will be displayed as >...
+"set list                               " Toggle manually with set list / set nolist or set list!
+"set listchars=""                       " Empty the listchars
+"set listchars=tab:>.                   " A tab will be displayed as >...
 "set listchars+=trail:.                 " Trailing white spaces will be displayed as .
 set nobackup                           " Don't constantly write backup files
 set noswapfile                         " Ain't nobody got time for swap files
