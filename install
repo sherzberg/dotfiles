@@ -2,31 +2,10 @@
 shopt -s extglob
 set -euo pipefail
 
-echo "Need to install git (brew install git | apt-get install git)"
-echo "=> press enter"
-read
-
-if [ "$(uname)" = "Darwin" ]; then
-	brew install git
-else
-	apt-get install -y git
-fi
-
-if [ ! -x `which vim` ]; then
-	if [ ! "$(uname)" = "Darwin" ]; then
-		apt-get install -y vim-nox
-	fi
-fi
-
-cd ~
 mkdir -p ~/bin
 
 echo "Need to install a few python deps"
 sudo pip install virtualenv virtualenvwrapper autoenv pipsi
-
-cd ~
-git clone --recursive https://github.com/sherzberg/dotfiles.git
-cd dotfiles
 
 # Setup sym links
 for i in bashrc bash_profile gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
@@ -37,7 +16,6 @@ done;
 
 ln -s $HOME/dotfiles/gitignore $HOME/.hgignore
 
-mkdir -p ~/.config/awesome
 rm -rf ~/.config/awesome
 ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
 
@@ -46,7 +24,7 @@ ln -s $HOME/dotfiles/redshift.conf ~/.config/redshift.conf
 
 mkdir -p ~/.pip
 ln -s ~/dotfiles/pip.conf ~/.pip/pip.conf
-
+	
 if [ "$(uname)" = "Darwin" ]; then
 	ln -s $HOME/dotfiles/tmux/mac_tmux ~/.tmux
 else
