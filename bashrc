@@ -67,6 +67,7 @@ bind '"\C-p": "fz\n"'
 proml
 
 source /usr/local/bin/activate.sh
+alias tmux="TERM=screen-256color-bce tmux"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "~/.gvm/bin/gvm-init.sh" ]] && source "~/.gvm/bin/gvm-init.sh"
