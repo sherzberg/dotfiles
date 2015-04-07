@@ -37,6 +37,8 @@ Bundle 'fatih/vim-go'
 " PHP
 Bundle 'arnaud-lb/vim-php-namespace'
 
+" Scala
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on     " required!
 
