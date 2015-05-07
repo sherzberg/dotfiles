@@ -40,6 +40,9 @@ Bundle 'arnaud-lb/vim-php-namespace'
 " Scala
 Bundle 'derekwyatt/vim-scala'
 
+" Terraform
+Bundle 'markcornick/vim-terraform'
+
 filetype plugin indent on     " required!
 
 " Setup Leader
