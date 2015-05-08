@@ -24,7 +24,7 @@ set nobackup                           " Don't constantly write backup files
 set noswapfile                         " Ain't nobody got time for swap files
 set noerrorbells                       " Don't beep
 set nowrap                             " Do not wrap lines
-set showbreak=↪\                       " Character to precede line wraps for the times I turn it on
+set showbreak=|->                      " Character to precede line wraps for the times I turn it on
 set popt=left:8pc,right:3pc            " Print options
 set shiftwidth=4                       " Number of spaces to use for each step of indent
 set showcmd                            " Display incomplete commands in the bottom line of the screen

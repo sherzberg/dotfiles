@@ -10,7 +10,6 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'klen/python-mode'
-Bundle 'flazz/vim-colorschemes'
 Bundle 'ameade/qtpy-vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
@@ -25,11 +24,15 @@ Bundle "garbas/vim-snipmate"
 Bundle "ekalinin/Dockerfile.vim"
 Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 Bundle "plasticboy/vim-markdown"
-Bundle "jnwhiteh/vim-golang"
 Bundle "hylang/vim-hy"
 Bundle "editorconfig/editorconfig-vim"
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-commentary'
+
+Bundle 'majutsushi/tagbar'
+
+" Color
+Bundle 'duythinht/inori'
 
 " Go
 Bundle 'fatih/vim-go'
@@ -54,7 +57,7 @@ autocmd filetype python set ft=python.django
 
 " Colors
 set t_Co=256
-color 256-jungle
+silent! colorscheme inori
 
 " Python Mode Settings
 " Enable python folding
