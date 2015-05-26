@@ -29,6 +29,8 @@ Bundle "editorconfig/editorconfig-vim"
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-commentary'
 
+Bundle 'Shougo/neocomplete.vim'
+
 Bundle 'majutsushi/tagbar'
 
 " Color
@@ -141,6 +143,13 @@ let g:vim_markdown_folding_disabled=1
 
 
 
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" " Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 
