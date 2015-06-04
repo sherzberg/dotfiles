@@ -73,6 +73,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 
+NeoBundle 'Shougo/vimfiler.vim'
+
 " -------------------------------------------------
 call neobundle#end()
 
@@ -164,7 +166,6 @@ let g:vim_markdown_folding_disabled=1
 
 
 
-
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " " Use smartcase.
@@ -176,9 +177,34 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <C-p> :Unite file_rec/async<cr>
+" Unite search for a file
+" Unite file buffer
+" nnoremap <C-p> :Unite -start-insert tab file_rec/async<cr>
+nnoremap <C-p> :Unite -start-insert file buffer file_rec/async<cr>
+
+" Unite search in file
+call unite#custom#source('file,file/new,buffer,file_rec,line', 'matchers', 'matcher_fuzzy')
+nnoremap <C-k> :<C-u>Unite -buffer-name=search -start-insert line<cr>
+
+" https://github.com/terryma/dotfiles/blob/master/.vimrc#L1317
+" Set up some custom ignores
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ 'git5/.*/review/',
+      \ 'google/obj/',
+      \ 'tmp/',
+      \ '.sass-cache',
+      \ 'node_modules/',
+      \ 'bower_components/',
+      \ 'dist/',
+      \ '.git5_specs/',
+      \ '.pyc',
+      \ ], '\|'))
 
 
+" VimFiler
+let g:vimfiler_as_default_explorer = 1
 
 
 
