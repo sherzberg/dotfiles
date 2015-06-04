@@ -1,57 +1,90 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+if has('vim_starting')
+  if &compatible
+    set nocompatible           " Be iMproved
+  endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+ " required
+ set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+
+" required
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" required
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+" -------------------------------------------------
 
 " Bundles
-Bundle 'klen/python-mode'
-Bundle 'ameade/qtpy-vim'
-Bundle 'rodjek/vim-puppet'
-Bundle 'godlygeek/tabular'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
-Bundle 'honza/vim-snippets'
+NeoBundle 'klen/python-mode'
+NeoBundle 'ameade/qtpy-vim'
+NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'honza/vim-snippets'
 " vim-snipmate requires these
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "ekalinin/Dockerfile.vim"
-Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
-Bundle "plasticboy/vim-markdown"
-Bundle "hylang/vim-hy"
-Bundle "editorconfig/editorconfig-vim"
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-commentary'
+NeoBundle "MarcWeber/vim-addon-mw-utils"
+NeoBundle "tomtom/tlib_vim"
+NeoBundle "garbas/vim-snipmate"
+NeoBundle "ekalinin/Dockerfile.vim"
+NeoBundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
+NeoBundle "plasticboy/vim-markdown"
+NeoBundle "hylang/vim-hy"
+NeoBundle "editorconfig/editorconfig-vim"
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-commentary'
 
-Bundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neocomplete.vim'
 
-Bundle 'majutsushi/tagbar'
+NeoBundle 'majutsushi/tagbar'
 
 " Color
-Bundle 'duythinht/inori'
+NeoBundle 'duythinht/inori'
 
 " Go
-Bundle 'fatih/vim-go'
+NeoBundle 'fatih/vim-go'
 
 " PHP
-Bundle 'arnaud-lb/vim-php-namespace'
-
-" Scala
-Bundle 'derekwyatt/vim-scala'
+NeoBundle 'arnaud-lb/vim-php-namespace'
 
 " Terraform
-Bundle 'markcornick/vim-terraform'
+NeoBundle 'markcornick/vim-terraform'
 
 " IntelliJ-like smart select
-Bundle 'terryma/vim-expand-region'
+NeoBundle 'terryma/vim-expand-region'
 
-filetype plugin indent on     " required!
+NeoBundle 'Shougo/unite.vim'
+
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
+" -------------------------------------------------
+call neobundle#end()
+
+" required
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+" -------------------------------------------------
+
+
 
 " Setup Leader
 let mapleader = ","
@@ -77,21 +110,6 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_autoimport = 0
-
-" CtrlP Mappings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" let g:ctrlp_custom_ignore = 'build$\|node_modules$\|.DS_Store|.git|.bak|.swp|.pyc|_site$\'
-let g:ctrlp_custom_ignore = {
-  \ 'hiddendir':  '\v[\/]\.(git|hg|svn|DS_Store)$',
-  \ 'dir':  '\v[\/](_site)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_max_height = 18
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -154,6 +172,11 @@ let g:neocomplete#enable_smart_case = 1
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+
+" Unite
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+nnoremap <C-p> :Unite file_rec/async<cr>
 
 
 
