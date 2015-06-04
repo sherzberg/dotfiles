@@ -48,6 +48,9 @@ Bundle 'derekwyatt/vim-scala'
 " Terraform
 Bundle 'markcornick/vim-terraform'
 
+" IntelliJ-like smart select
+Bundle 'terryma/vim-expand-region'
+
 filetype plugin indent on     " required!
 
 " Setup Leader
