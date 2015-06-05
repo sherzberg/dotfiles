@@ -7,6 +7,8 @@ if has('vim_starting')
  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+set rtp+=~/work/unite.vim
+set rtp+=~/work/vimproc.vim
 
 " required
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -178,27 +180,39 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 " Unite search for a file
-" Unite file buffer
 " nnoremap <C-p> :Unite -start-insert tab file_rec/async<cr>
 nnoremap <C-p> :Unite -start-insert file buffer file_rec/async<cr>
+" nnoremap <C-p> :Unite -start-insert file buffer file_rec/git<cr>
 
 " Unite search in file
 call unite#custom#source('file,file/new,buffer,file_rec,line', 'matchers', 'matcher_fuzzy')
 nnoremap <C-k> :<C-u>Unite -buffer-name=search -start-insert line<cr>
+
+let g:unite_update_time = 333
+let g:unite_source_file_rec_max_cache_files = 0
+let g:unite_source_grep_max_candidates = 200
+
+let g:unite_source_grep_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
+let g:unite_source_grep_recursive_opt = ''
+
+let g:unite_source_rec_async_command =
+    \ 'ag --follow --nocolor --nogroup --hidden -g ""'
 
 " https://github.com/terryma/dotfiles/blob/master/.vimrc#L1317
 " Set up some custom ignores
 call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
       \ 'ignore_pattern', join([
       \ '\.git/',
-      \ 'git5/.*/review/',
-      \ 'google/obj/',
       \ 'tmp/',
       \ '.sass-cache',
       \ 'node_modules/',
       \ 'bower_components/',
+      \ 'vendor/',
+      \ 'target/',
+      \ 'Godeps/_workspace',
       \ 'dist/',
-      \ '.git5_specs/',
+      \ '.idea/',
+      \ '.vagrant/',
       \ '.pyc',
       \ ], '\|'))
 
