@@ -48,6 +48,8 @@ NeoBundle 'Shougo/neocomplete.vim'
 
 NeoBundle 'majutsushi/tagbar'
 
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
+
 " Color
 NeoBundle 'duythinht/inori'
 
