@@ -50,6 +50,8 @@ NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 
+NeoBundle 'lambdalisue/vim-gista'
+
 " Color
 NeoBundle 'duythinht/inori'
 
@@ -222,7 +224,8 @@ call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
 " VimFiler
 let g:vimfiler_as_default_explorer = 1
 
-
+" Gista
+let g:gista#github_user = 'sherzberg'
 
 " From here: https://github.com/JarrodCTaylor/dotfiles
 
