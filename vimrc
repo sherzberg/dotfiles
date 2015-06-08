@@ -226,6 +226,8 @@ let g:vimfiler_as_default_explorer = 1
 
 " Gista
 let g:gista#github_user = 'sherzberg'
+" default to private
+let g:gista#post_private = 1
 
 " From here: https://github.com/JarrodCTaylor/dotfiles
 
