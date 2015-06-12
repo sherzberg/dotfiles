@@ -69,6 +69,8 @@ NeoBundle 'terryma/vim-expand-region'
 
 NeoBundle 'Shougo/unite.vim'
 
+NeoBundle 'airblade/vim-gitgutter'
+
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
