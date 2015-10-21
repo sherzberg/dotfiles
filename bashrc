@@ -4,7 +4,7 @@ export EDITOR=vim
 set -o vi
 
 # History
-export HISTSIZE=1000
+export HISTSIZE=5000
 export HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
@@ -18,8 +18,6 @@ shopt -s checkwinsize
 # fix spelling mistakes!
 shopt -s cdspell
 
-source ~/dotfiles/bash/colors/gentoo-bash
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -27,7 +25,14 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 	. /etc/bash_completion
 fi
 
+if [[ "`uname`" == 'Darwin' ]]; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+fi
+
 # Colors
+source ~/dotfiles/bash/colors/gentoo-bash
 for colorfile in ~/dotfiles/bash/colors/*; do
 	. $colorfile
 done
@@ -61,13 +66,10 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # Bind keyboard shortcuts
-bind '"\C-p": "fz\n"'
+# bind '"\C-p": "fz\n"'
 
-
+# setup prompt
 proml
 
 source /usr/local/bin/activate.sh
 alias tmux="TERM=screen-256color-bce tmux"
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "~/.gvm/bin/gvm-init.sh" ]] && source "~/.gvm/bin/gvm-init.sh"

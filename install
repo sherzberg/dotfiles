@@ -2,41 +2,33 @@
 shopt -s extglob
 set -euo pipefail
 
-mkdir -p ~/bin
-
-echo "Need to install a few python deps"
-sudo pip install virtualenv virtualenvwrapper autoenv pipsi
+# echo "Need to install a few python deps"
+# sudo pip install virtualenv virtualenvwrapper autoenv pipsi
 
 # Setup sym links
-for i in bashrc bash_profile gitconfig gitignore vimrc vim tmux.conf i3 i3status.conf xsession
+for i in bashrc bash_profile gitconfig gitignore hgignore pip vimrc vim tmux.conf i3 i3status.conf xsession
 do
-	rm -rf $HOME/.$i;
-	ln -s $HOME/dotfiles/$i $HOME/.$i;
+	ln -sF $HOME/dotfiles/$i $HOME/.$i;
 done;
 
-ln -s $HOME/dotfiles/gitignore $HOME/.hgignore
-
-rm -rf ~/.config/awesome
-ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
-
-rm -f ~/.config/redshift.conf
-ln -s $HOME/dotfiles/redshift.conf ~/.config/redshift.conf
-
-mkdir -p ~/.pip
-ln -s ~/dotfiles/pip.conf ~/.pip/pip.conf
-	
 if [ "$(uname)" = "Darwin" ]; then
-	ln -s $HOME/dotfiles/tmux/mac_tmux ~/.tmux
+	ln -sF $HOME/dotfiles/tmux/mac_tmux $HOME/.tmux
 else
-	ln -s $HOME/dotfiles/tmux/linux_tmux ~/.tmux
+	ln -sF $HOME/dotfiles/tmux/linux_tmux $HOME/.tmux
 fi
 
-echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
-if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
-    echo -n "What is your git full name => "; read name
-    git config --global user.name "$name"
-    echo -n "What is your git email => "; read email
-    git config --global user.email "$email"
+if [ ! -d ~/bin ]; then
+    echo git clone git@gist.github.com:eb63d0322dc9bb3c1724.git
+fi
+
+if [ ! -f ~/.gitconfig ]; then
+    echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
+    if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
+        echo -n "What is your git full name => "; read name
+        git config --global user.name "$name"
+        echo -n "What is your git email => "; read email
+        git config --global user.email "$email"
+    fi
 fi
 
 vim +BundleInstall +qall
