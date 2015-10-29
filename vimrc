@@ -67,6 +67,9 @@ NeoBundle 'markcornick/vim-terraform'
 " IntelliJ-like smart select
 NeoBundle 'terryma/vim-expand-region'
 
+" YAML
+NeoBundle "avakhov/vim-yaml"
+
 NeoBundle 'Shougo/unite.vim'
 
 NeoBundle 'airblade/vim-gitgutter'
