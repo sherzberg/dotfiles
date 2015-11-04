@@ -70,6 +70,9 @@ NeoBundle 'terryma/vim-expand-region'
 " YAML
 NeoBundle "avakhov/vim-yaml"
 
+" HCL
+NeoBundle 'fatih/vim-hclfmt'
+
 NeoBundle 'Shougo/unite.vim'
 
 NeoBundle 'airblade/vim-gitgutter'
