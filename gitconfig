@@ -31,3 +31,6 @@
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
+	
+[push]
+	default = matching
