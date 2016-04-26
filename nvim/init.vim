@@ -35,8 +35,12 @@ call dein#add('ctrlpvim/ctrlp.vim')
 " Nice commenting
 call dein#add('tpope/vim-commentary')
 
+" Syntax Checker
+call dein#add('benekastah/neomake')
+
 " deoplete
 call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-go', {'build': 'make'})
 
 " Go
 call dein#add('fatih/vim-go')
@@ -67,6 +71,10 @@ silent! colorscheme inori
 " NeoVim
 " disable mouse
 set mouse-=a
+
+" Neomake
+" syntax check on save
+autocmd! BufWritePost * Neomake
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
