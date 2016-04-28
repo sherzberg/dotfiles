@@ -45,6 +45,12 @@ call dein#add('zchee/deoplete-go', {'build': 'make'})
 " Go
 call dein#add('fatih/vim-go')
 
+" HCL
+call dein#add('fatih/vim-hclfmt')
+
+" Terraform
+call dein#add('hashivim/vim-terraform')
+
 " ------------------------------------------------------
 
 " Required:
