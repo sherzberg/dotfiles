@@ -28,6 +28,9 @@ call dein#add('terryma/vim-expand-region')
 " Ctrl-P
 call dein#add('ctrlpvim/ctrlp.vim')
 
+" Editorconfig
+call dein#add('editorconfig/editorconfig-vim')
+
 " Bracketed Paste
 " is this needed in neovim??
 " call dein#add('ConradIrwin/vim-bracketed-paste')
@@ -37,6 +40,9 @@ call dein#add('tpope/vim-commentary')
 
 " Syntax Checker
 call dein#add('benekastah/neomake')
+
+" git
+call dein#add('tpope/vim-fugitive')
 
 " deoplete
 call dein#add('Shougo/deoplete.nvim')
@@ -131,6 +137,13 @@ set nosol                              " Keep cursor in the same column if possi
 set ruler
 set number
 set showmode
+
+" Ctrl-P
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+set wildignore+=*/tmp/*,*/vendor/*,*/node_modules/*,*/bower_components*/,*.so,*.swp,*.zip     " MacOSX/Linux
+
 
 " Treat JSON files like JavaScript {2
 "-----------------------------------------------------------------------------------
