@@ -97,6 +97,10 @@ inoremap <silent><expr> <Tab>
 		\ pumvisible() ? "\<C-n>" :
 		\ deoplete#mappings#manual_complete()
 
+
+" vim-go
+let g:go_fmt_command = "goimports"
+
 syntax on
 
 " Various settings
