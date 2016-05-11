@@ -43,6 +43,7 @@ call dein#add('benekastah/neomake')
 
 " git
 call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
 
 " deoplete
 call dein#add('Shougo/deoplete.nvim')
