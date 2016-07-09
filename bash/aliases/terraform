@@ -1,1 +1,1 @@
-alias tf=terraform
+alias tf="time TF_LOG=DEBUG TF_LOG_PATH=./.tf-log.debug.log terraform"
