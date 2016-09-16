@@ -19,12 +19,3 @@ $ git clone git@github.com:sherzberg/dotfiles.git
 $ cd dotfiles
 $ ./install
 ```
-
-I now use Vundle to install vim plugins so use this target. This command will fail when trying to load colors but just hit ENTER.
-
-Update Vim Plugins
-==================
-
-```bash
-$ vim +BundleUpdate +qall
-```
