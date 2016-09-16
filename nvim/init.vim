@@ -1,11 +1,116 @@
-" vim: set foldmarker={,} foldlevel=0 foldmethod=marker:
-"
-" General Settings {1
-" Switch syntax highlighting on. {2
-"-----------------------------------------------------------------------------------
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=/Users/sherzberg/dotfiles/vim/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('~/dotfiles/vim/dein'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+
+" ------------------------------------------------------
+
+" Color
+call dein#add('duythinht/inori')
+
+" IntelliJ-like smart select
+call dein#add('terryma/vim-expand-region')
+
+" Ctrl-P
+call dein#add('ctrlpvim/ctrlp.vim')
+
+" Editorconfig
+call dein#add('editorconfig/editorconfig-vim')
+
+" Bracketed Paste
+" is this needed in neovim??
+" call dein#add('ConradIrwin/vim-bracketed-paste')
+
+" Nice commenting
+call dein#add('tpope/vim-commentary')
+
+" Syntax Checker
+call dein#add('benekastah/neomake')
+
+" git
+call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
+
+" deoplete
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-go', {'build': 'make'})
+
+" Go
+call dein#add('fatih/vim-go')
+
+" HCL
+call dein#add('fatih/vim-hclfmt')
+
+" Terraform
+call dein#add('hashivim/vim-terraform')
+
+" ------------------------------------------------------
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
 syntax on
-" }2
-" Various settings {2
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+" Setup Leader
+let mapleader = ","
+
+" Colors
+set t_Co=256
+silent! colorscheme inori
+
+" NeoVim
+" disable mouse
+set mouse-=a
+
+" Neomake
+" syntax check on save
+autocmd! BufWritePost * Neomake
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+" " Use smartcase.
+let g:deoplete#enable_smart_case = 1
+" <TAB>: completion.
+inoremap <silent><expr> <Tab>
+		\ pumvisible() ? "\<C-n>" :
+		\ deoplete#mappings#manual_complete()
+
+
+" vim-go
+let g:go_fmt_command = "goimports"
+
+" Ctrl-P
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+set wildignore+=*/tmp/*,*/vendor/*,*/node_modules/*,*/bower_components*/,*.so,*.swp,*.zip     " MacOSX/Linux
+
+syntax on
+
+" Various settings
 "-----------------------------------------------------------------------------------
 set autoindent                         " Copy indent from current line
 set autoread                           " Read open files again when changed outside Vim
@@ -44,12 +149,10 @@ set ruler
 set number
 set showmode
 
-" }2
+
 " Treat JSON files like JavaScript {2
 "-----------------------------------------------------------------------------------
 au BufNewFile,BufRead *.json set ft=javascript
-" }2
-" Last cursor position {2
 "-----------------------------------------------------------------------------------
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -61,5 +164,30 @@ if has("autocmd")
         \   exe "normal! g`\"" |
         \ endif
 endif
-" }2
-" }1
+
+
+if !exists("g:exclude")
+    let g:exclude = [""]
+endif
+
+let b:fileList = split(globpath('~/.vim/vanilla-configs', '*.vim'), '\n')
+" let b:fileList += split(globpath('~/.vim/plugin-configs', '*.vim'), '\n')
+" let b:fileList += split(globpath('~/.vim/functions', '*.vim'), '\n')
+" let b:fileList += split(globpath('~/dotfiles/custom-configs/**', '*.vim'), '\n')
+
+" Function to process lists for sourceing and adding bundles {1
+function! ProcessList(listToProcess, functionToCall)
+    for fpath in a:listToProcess
+        if index(g:exclude, split(fpath, "/")[-1]) >= 0
+            continue
+        else
+            call {a:functionToCall}(fpath)
+        endif
+    endfor
+endfunction
+
+function! SourceFile(fpath)
+    exe 'source' a:fpath
+endfunction
+
+call ProcessList(b:fileList, "SourceFile")

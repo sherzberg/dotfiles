@@ -2,11 +2,11 @@
 shopt -s extglob
 set -euo pipefail
 
-# echo "Need to install a few python deps"
-# sudo pip install virtualenv virtualenvwrapper autoenv pipsi
+echo "Need to install a few python deps"
+sudo pip install virtualenv virtualenvwrapper autoenv pipsi
 
 # Setup sym links
-for i in bashrc bash_profile gitconfig gitignore hgignore pip vimrc vim tmux.conf i3 i3status.conf xsession
+for i in bashrc bash_profile gitconfig gitignore hgignore pip nvim tmux.conf i3 i3status.conf xsession
 do
 	ln -sF $HOME/dotfiles/$i $HOME/.$i;
 done;
@@ -18,18 +18,7 @@ else
 fi
 
 if [ ! -d ~/bin ]; then
-    echo git clone git@gist.github.com:eb63d0322dc9bb3c1724.git
+    git clone git@gist.github.com:eb63d0322dc9bb3c1724.git ~/bin
 fi
 
-if [ ! -f ~/.gitconfig ]; then
-    echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
-    if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
-        echo -n "What is your git full name => "; read name
-        git config --global user.name "$name"
-        echo -n "What is your git email => "; read email
-        git config --global user.email "$email"
-    fi
-fi
-
-vim +BundleInstall +qall
 echo "Installation complete! Run $ source ~/.bashrc"

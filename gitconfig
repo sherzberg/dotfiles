@@ -1,6 +1,7 @@
 [user]
 	name = Spencer Herzberg
 	email = spencer.herzberg@gmail.com
+    signingkey = D76C2B38
 
 [color]
 	ui = auto
@@ -34,3 +35,10 @@
 	
 [push]
 	default = matching
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
