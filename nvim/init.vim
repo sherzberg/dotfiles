@@ -153,6 +153,9 @@ set showmode
 " Treat JSON files like JavaScript {2
 "-----------------------------------------------------------------------------------
 au BufNewFile,BufRead *.json set ft=javascript
+" Treat Thor files like Ruby {2
+"-----------------------------------------------------------------------------------
+au BufRead,BufNewFile *.thor set filetype=ruby
 "-----------------------------------------------------------------------------------
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
