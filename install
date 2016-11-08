@@ -17,6 +17,9 @@ else
 	ln -sF $HOME/dotfiles/tmux/linux_tmux $HOME/.tmux
 fi
 
+mkdir -p $HOME/.config/nvim
+ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+
 if [ ! -d ~/bin ]; then
     git clone git@gist.github.com:eb63d0322dc9bb3c1724.git ~/bin
 fi
