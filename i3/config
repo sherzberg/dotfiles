@@ -159,3 +159,4 @@ exec gsettings set org.gnome.desktop.background show-desktop-icons false
 #exec google-chrome
 exec feh --bg-fill ~/.background.png
 exec --no-startup-id nm-applet
+exec setxkbmap -option 'caps:ctrl_modifier'
