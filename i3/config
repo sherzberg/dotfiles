@@ -4,12 +4,10 @@
 
 # windows key
 set $mod Mod4
-# alt key
-# set $mod Mod1
 
 # font for window titles. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font xft:Droid Sans Mono Dotted Bold 7.8
+font xft:Droid Sans Mono Dotted Bold 14
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -32,7 +30,7 @@ bindsym $mod+Shift+Q kill
 bindsym $mod+d exec dmenu_run
 
 # lock screen
-bindsym $mod+l exec i3lock -c 111111
+bindsym $mod+l exec ~/bin/lock
 
 # run display-chooser
 bindsym $mod+Shift+P exec ~/dotfiles/i3/display-chooser.sh
@@ -157,6 +155,9 @@ bindsym $mod+p exec "nautilus"
 exec gsettings set org.gnome.desktop.background show-desktop-icons false
 
 #exec google-chrome
-exec feh --bg-fill ~/.background.png
+exec feh --bg-fill ~/.background.jpg
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec setxkbmap -option 'caps:ctrl_modifier'
+exec xinput set-prop 12 "Synaptics Palm Detection" 1
+exec xinput disable 17
